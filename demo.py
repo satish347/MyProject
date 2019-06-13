@@ -22,6 +22,7 @@ while(cap.isOpened()):
 		gray=cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
 		frame75 = rescale_frame(gray, percent=75)
 		font = cv2.FONT_HERSHEY_SIMPLEX
+		#Time and date added
 		cv2.putText(frame75,str(datetime.now()),(10,30),font, 1,(255,255,255),2,cv2.LINE_AA)
 		cv2.rectangle(frame75,(384,150),(150,350),(255,0,0),3)		
 		out.write(frame75)
