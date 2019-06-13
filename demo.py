@@ -6,7 +6,7 @@ width=cap.get(3)
 height=cap.get(4)
 fourcc = cv2.VideoWriter_fourcc(*'XVID')
 out = cv2.VideoWriter('output.avi',fourcc, 20.0, (int(width*0.75),int(height*0.75)),False)
-#testing
+
 def rescale_frame(frame, percent=75):
     width = int(frame.shape[1] * percent/ 100)
     height = int(frame.shape[0] * percent/ 100)
