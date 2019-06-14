@@ -22,8 +22,14 @@ while(cap.isOpened()):
 		gray=cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
 		frame75 = rescale_frame(gray, percent=75)
 		font = cv2.FONT_HERSHEY_SIMPLEX
+		#Time and date added
 		cv2.putText(frame75,str(datetime.now()),(10,30),font, 1,(255,255,255),2,cv2.LINE_AA)
-		cv2.rectangle(frame75,(384,150),(150,350),(255,0,0),3)		
+		#rectangle value taken from cetroid of the image
+		h,w=frame75.shape
+		upper_left=(int(w/2-50),int(h/2-50))
+		bottom_right=(int(w/2+50),int(h/2+50))
+		cv2.rectangle(frame75,upper_left,bottom_right,(255,0,0),3)
+		#cv2.rectangle(frame75,(384,150),(150,350),(255,0,0),3)		
 		out.write(frame75)
 		cv2.imshow('gray frame',gray)
 	if cv2.waitKey(1) & 0xFF == ord('q'):
