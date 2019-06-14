@@ -30,6 +30,7 @@ while(cap.isOpened()):
 		bottom_right=(int(w/2+50),int(h/2+50))
 		cv2.rectangle(frame75,upper_left,bottom_right,(255,0,0),3)
 		#cv2.rectangle(frame75,(384,150),(150,350),(255,0,0),3)		
+		#comment added
 		out.write(frame75)
 		cv2.imshow('gray frame',gray)
 	if cv2.waitKey(1) & 0xFF == ord('q'):
